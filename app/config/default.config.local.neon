@@ -1,0 +1,6 @@
+doctrine:
+        user: root
+        password: root
+        dbname: test_ticket
+        metadata:
+                App: %appDir%

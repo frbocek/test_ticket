@@ -1,0 +1,25 @@
+parameters:
+
+
+application:
+        errorPresenter: Error
+        mapping:
+                *: App\*Module\Presenters\*Presenter
+
+
+session:
+        expiration: 14 days
+
+
+services:
+        router: App\RouterFactory::createRouter
+        - App\Model\Service\AclService
+        - App\Model\Service\UserAdminService
+        - App\Model\Service\UserAdminVillageService
+        - App\Model\Service\VillageService
+
+extensions:
+        console: Kdyby\Console\DI\ConsoleExtension
+        events: Kdyby\Events\DI\EventsExtension
+        annotations: Kdyby\Annotations\DI\AnnotationsExtension
+        doctrine: Kdyby\Doctrine\DI\OrmExtension
